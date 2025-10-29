@@ -1,0 +1,1 @@
+"""Simple educational ML algorithms using NumPy only."""
