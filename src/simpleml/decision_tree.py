@@ -18,7 +18,9 @@ class DecisionTree:
                 if left.sum()==0 or right.sum()==0: continue
                 imp = (left.sum()/len(y))*gini(y[left]) + (right.sum()/len(y))*gini(y[right])
                 gain = cur - imp
-                if gain>best_gain: best_gain,gain; best_feat, best_thr = gain, f, thr
+                if gain > best_gain:
+                    best_gain = gain
+                    best_feat, best_thr = f, thr
         if best_feat is None:
             n.pred = np.bincount(y).argmax(); return n
         n.feature, n.threshold = best_feat, best_thr
